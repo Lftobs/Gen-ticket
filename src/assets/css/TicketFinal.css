@@ -1,0 +1,139 @@
+.ticket__title {
+  text-align: center;
+  margin: 32px 0 0;
+}
+
+.ticket__title h1 {
+  color: #FFF;
+  font-family: "Alatsi", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ticket__title p {
+  margin-top: 16px;
+  color: #FAFAFA;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.ticket__container {
+  width: 300px;
+  margin: 64px auto 32px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  
+}
+
+
+.ticket__info {
+  border-radius: 16px;
+  border: 1px solid #24A0B5;
+  background: rgba(3, 30, 33, 0.10);
+  backdrop-filter: blur(2px);
+  /* margin: 20px; */
+  /* padding: 14px; */
+  position: absolute;
+  top: 1.5rem;
+  width: 90%;
+}
+
+.ticket__bg {
+  width: 100%;
+}
+
+.ticket__barcode {
+  position: absolute;
+  bottom: 25px;
+  left: 33px;
+}
+
+.ticket__details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FAFAFA;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.ticket__details h1 {
+  font-family: "Road Rage", sans-serif;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.ticket__details__pfp {
+  border-radius: 15px;
+  height: 100px;
+  width: 160px;
+  height: 160px;
+  margin-top: 1rem;
+}
+
+.ticket__details__pfp img {
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+}
+
+.ticket__details__info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  grid-auto-flow: dense;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 1px solid #133D44;
+  background: #08343C;
+  width: 90%;
+  height: 10rem;
+}
+
+.ticket__details__info__item {
+  display: flex;
+  justify-content: center;
+  /* background: red; */
+  align-items: start;
+  flex-direction: column;
+  border-right: 1px solid #133D44;
+  border-bottom: 1px solid #133D44;
+  padding-inline: .5rem;
+}
+
+.ticket__details__info__item h2 {
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 150%; /* 15px */
+  opacity: 0.33;
+}
+
+.ticket__details__info__item p {
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 150%; /* 18px */
+}
+
+.ticket__details__info__item:last-child {
+  grid-column: span 2;
+}
+
