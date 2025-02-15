@@ -68,6 +68,10 @@ button:hover .btn-icon {
     width: 90%;
   }
 
+  .nav {
+    display: none;
+  }
+
   .nav ul {
     gap: 20px;
   }

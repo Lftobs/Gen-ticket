@@ -12,7 +12,10 @@ const Final = ({step, handleNewTicket}) => {
 
   const downloadTicketAsImage = () => {
     const ticketElement = document.querySelector('.ticket__container');
-    html2canvas(ticketElement).then(canvas => {
+    html2canvas(ticketElement, {
+      allowTaint: true,
+      useCORS: true,
+    }).then(canvas => {
       const link = document.createElement('a');
       link.href = canvas.toDataURL('image/png');
       link.download = 'ticket.png';

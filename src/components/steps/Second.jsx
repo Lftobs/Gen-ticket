@@ -12,6 +12,7 @@ const Second = ({step, handleBack, handleNext, uploadedImage, setUploadedImage, 
     email: '',
     request: ''
   });
+  const [eror, setError] = useState('')
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,12 +28,12 @@ const Second = ({step, handleBack, handleNext, uploadedImage, setUploadedImage, 
     const data = new FormData();
     let cloud_url = '';
     if (!uploadedImage) {
-      alert("Please upload an image");
+      setError("Please upload an image");
       setLoading(false);
       return;
     }
     if (formData.name.trim() === '' || formData.email.trim() === '') {
-      alert("Name or email cannot be empty");
+      setError("Name or email cannot be empty");
       setLoading(false);
       return;
     }
@@ -48,7 +49,7 @@ const Second = ({step, handleBack, handleNext, uploadedImage, setUploadedImage, 
       );
       const url_res = await response.json();
       if (!url_res.secure_url) {
-        alert("Image upload failed. Please try again.");
+        setError("Image upload failed. Please try again.");
         setLoading(false);
         return;
       }
@@ -74,7 +75,7 @@ const Second = ({step, handleBack, handleNext, uploadedImage, setUploadedImage, 
       }
       handleNext();
     } catch (error) {
-      console.error("Error uploading image:", error);
+      setError("An error occurred while uploading image");
       setLoading(false);
       return;
     }
@@ -117,10 +118,11 @@ const Second = ({step, handleBack, handleNext, uploadedImage, setUploadedImage, 
             onChange={handleChange}
             disabled={loading}
             placeholder="Enter your name"
+            required
           />
         </div>
 
-        <div className="input__section">
+        <form className="input__section">
           <label htmlFor="email">Enter your email*</label>
           <div className="input__email">
             <Mail className="mail__icon" />
@@ -131,22 +133,22 @@ const Second = ({step, handleBack, handleNext, uploadedImage, setUploadedImage, 
               placeholder="Enter a valid email. e.g., hello@avioflagos.io"
               onChange={handleChange}
               disabled={loading}
+              required
             />
           </div>
-        </div>
 
-        <div className="input__section">
-          <label htmlFor="request">Special Request?</label>
-          <textarea
-            name="request"
-            value={formData.request}
-            placeholder="Enter any special requests"
-            onChange={handleChange}
-            disabled={loading}
-          ></textarea>
-        </div>
-
-        <div className="btns">
+          <div className="input__section">
+            <label htmlFor="request">Special Request?</label>
+            <textarea
+              name="request"
+              value={formData.request}
+              placeholder="Enter any special requests"
+              onChange={handleChange}
+              disabled={loading}
+            ></textarea>
+          </div>
+          <p style={{color: 'red'}}>{eror}</p>
+          <div className="btns">
           <button
             className="btn cancel"
             onClick={handleBack}
@@ -163,6 +165,8 @@ const Second = ({step, handleBack, handleNext, uploadedImage, setUploadedImage, 
             {loading ? "Loading..." : "Get My Ticket"}
           </button>
         </div>
+        </form>
+       
       </div>
     </>
   );

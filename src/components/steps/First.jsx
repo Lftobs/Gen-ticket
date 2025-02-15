@@ -57,7 +57,7 @@ const First = ({step, handleBack, handleNext, selectedNumber, setSelectedNumber,
           </div>
         </div>
 
-        <div className="ticket-section">
+        <div className="ticket__section">
           <p>Number of Ticket: </p>
           <select
             value={selectedNumber}

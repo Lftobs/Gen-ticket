@@ -499,6 +499,7 @@ input::placeholder, textarea::placeholder {
 
   .ticket__barcode {
     width: 150px;
-    left: 85px;
+    left: 25%;
+    transform: translateX(25%);
   }
 } 
