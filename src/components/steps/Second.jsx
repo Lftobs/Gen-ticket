@@ -23,7 +23,8 @@ const Second = ({step, handleBack, handleNext, uploadedImage, setUploadedImage, 
   };
 
 
-  const handleSubmit = async() => {
+  const handleSubmit = async(e) => {
+    e.preventDefault();
     setLoading(true);
     const data = new FormData();
     let cloud_url = '';

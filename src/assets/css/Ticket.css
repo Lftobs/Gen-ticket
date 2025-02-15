@@ -220,6 +220,13 @@ select::-ms-expand {
   display: none !important  ;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  background: #0E464F !important;
+  opacity: .5;
+  color: #FAFAFA !important;
+}
+
 
 
 .seperator {
