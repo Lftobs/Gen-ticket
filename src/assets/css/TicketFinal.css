@@ -131,6 +131,13 @@
   font-size: 12px;
   font-weight: 700;
   line-height: 150%; /* 18px */
+  text-align: left;
+  word-wrap: break-word;
+  max-width: 100px;
+}
+
+.ticket__details__info__item p:nth-child(3) {
+  white-space: nowrap;
 }
 
 .ticket__details__info__item:last-child {
