@@ -62,7 +62,6 @@ const First = ({step, handleBack, handleNext, selectedNumber, setSelectedNumber,
           <select
             value={selectedNumber}
             onChange={(e) => setSelectedNumber(e.target.value)}
-            className='drop__down'
           >
             {[...Array(10)].map((_, index) => (
               <option key={index + 1} value={index + 1}>

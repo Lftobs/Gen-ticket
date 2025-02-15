@@ -1,21 +1,10 @@
 import { useState, useCallback } from "react"
 import { useDropzone } from "react-dropzone"
-import { Upload } from "lucide-react"
 import imgUpload from "../assets/upload.svg";
 
 
 export default function ImageUpload({uploadedImage, setUploadedImage}) {
   
-
- 
-
-  const imageStyle = uploadedImage ? { 
-		width: "100%", 
-		height: "100%", 
-		objectFit: "cover", 
-		borderRadius: "inherit" 
-} : {};
-
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0]
     if (file) {
@@ -56,14 +45,14 @@ export default function ImageUpload({uploadedImage, setUploadedImage}) {
             </> 
         ) : (
           <div className="content">
-              <label htmlFor="user-pfp-upload" className="label">
-                  <img 
-                    src={imgUpload} 
-                    alt="upload icon" 
-                    className="icon" 
-                  />
-                  <p>Drag & drop or click to upload</p>
-              </label>
+            <label htmlFor="user-pfp-upload" className="label">
+              <img 
+                src={imgUpload} 
+                alt="upload icon" 
+                className="icon" 
+              />
+              <p>Drag & drop or click to upload</p>
+            </label>
           </div>
         )}
         
